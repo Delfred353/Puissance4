@@ -14,6 +14,6 @@ public class projet {
 	}
 
 	public static void main(String[] args) {
-
+		int[][] grille = new int[6][7];
 	}
 }

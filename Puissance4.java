@@ -55,19 +55,7 @@ public class projet {
 		}
 		return rep;
 	}
-	//FOCTION TEST
-	public static void afficheTab2D(int [][] tab) {
-		String rep = "{";
-		for(int i =0; i < tab.length; i ++) {
-			rep += "{";
-			for(int j = 0; j < tab[i].length-1; j ++) {
-				rep += tab[i][j]+ ", ";
-			}
-			rep += tab[i][tab[i].length-1] + "},\n";
-		}
-		System.out.println(rep +"}");
-	}
-	//FONCTION TEST
+
 	public static void afficheGrille() {
 		String rep = "";
 		int[][] tab = symetrieHorizontale(grille);
@@ -82,7 +70,19 @@ public class projet {
 		}
 		System.out.print(rep);
 	}
-	
+	//FONCTION TEST
+	public static void afficheTab2D(int [][] tab) {
+		String rep = "{";
+		for(int i =0; i < tab.length; i ++) {
+			rep += "{";
+			for(int j = 0; j < tab[i].length-1; j ++) {
+				rep += tab[i][j]+ ", ";
+			}
+			rep += tab[i][tab[i].length-1] + "},\n";
+		}
+		System.out.println(rep +"}");
+	}
+	//FONCTION TEST
 	public static void main(String[] args) {
 		jouer(1, 3);
 		jouer(1, 3);

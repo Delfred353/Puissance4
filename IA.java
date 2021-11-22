@@ -13,7 +13,7 @@ public class IA {
             for (int j = 0; j < tab[i].length; j++)
                 {
                     if (tab[i][j] == P1) {
-                        if (check_line(tab[i], P1) || check_column(tab, P1) || check_diagonal(tab))
+                        if (check_line(tab[i], P1) || check_column(tab, P1) || check_diagonal(tab, j))
                             return (P1);
 
                     }
@@ -23,6 +23,7 @@ public class IA {
                     }
 
                 }
+        return (-1);
     }
 
     public static boolean check_line(int [] tab, int player)
@@ -30,6 +31,16 @@ public class IA {
         for (int i = 0; i < tab.length; i++)
             if (tab[i] == player)
                 return (true);
+        return (false);
+    }
+
+    public static boolean check_diagonal(int[][] tab, int player)
+    {
+        return (false);
+    }
+
+    public static boolean check_column(int[][] tab, int player)
+    {
         return (false);
     }
 }

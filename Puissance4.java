@@ -83,6 +83,45 @@ public class projet {
 		System.out.println(rep +"}");
 	}
 	//FONCTION TEST
+	public static boolean grilleEstPleine() {
+		for(int j = 0; j < grille[5].length ; j ++) {
+			if(grille[5][j] == 0) {return false;}
+		}
+		return true;
+	}
+	
+	public static void resetGrille() {
+		grille = new int[6][7];
+	}
+	
+	public static void boucleDeJeu() {
+		
+		int victoire = 0;
+		int grillePleine = 0;
+		int jouant = 1;
+		Scanner sc = new Scanner(System.in);
+		while(victoire == 0 || grillePleine != 0) {
+			afficheGrille();
+			System.out.println("Quel coup pour le joueur " + jouant);
+			int c = sc.nextInt();
+			jouer(jouant, c);
+			
+			if(detect_win_condition(jouant)) {victoire = jouant;}
+			else if(grilleEstPleine()) {grillePleine = 1;}
+			else {
+				if(jouant == 1) {jouant = 2;}
+				else {jouant = 1;}
+			}
+			
+	
+		}
+	}
+	
+	public static void jeu() {
+		resetGrille();
+		boucleDeJeu();
+		afficheGrille();
+	}
 	public static void main(String[] args) {
 		jouer(1, 3);
 		jouer(1, 3);
@@ -95,4 +134,6 @@ public class projet {
 		afficheTab2D(symetrieHorizontale(grille));
 		afficheGrille();
 	}
+	
 }
+

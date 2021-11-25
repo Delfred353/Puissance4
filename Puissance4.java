@@ -1,4 +1,4 @@
-//----------------------------------------------------
+///----------------------------------------------------
 // Auteurs : Pierre Roumane, Nicolas Merrer
 // Version : 0.1 
 //----------------------------------------------------
@@ -16,6 +16,7 @@ public class projet {
 	}
 	
 	public static void jouer(int joueur, int colonne) {
+		//Place un jeton dans la colonne indiqué dans un emplacement libre, en partant du haut de la colonne
 		for(int i = 0; i < grille.length; i ++) {
 			if(grille[i][colonne] == 0) {
 				grille[i][colonne] = joueur;
@@ -23,7 +24,9 @@ public class projet {
 			}
 		}
 	}
+	
 	public static int[][] symetrieHorizontale(int[][] tab){
+		//Renverse l'organisation du tableau pour préparé son affichage
 		int n = tab.length;
 		int[][] rep = new int[n][];
 		
@@ -57,6 +60,7 @@ public class projet {
 	}
 
 	public static void afficheGrille() {
+		//Affiche la grille de jeu avec X pour les jetons du joueur 1 et O pour ceux du joueur 2
 		String rep = "";
 		int[][] tab = symetrieHorizontale(grille);
 		for(int i = 0; i < tab.length; i++) {
@@ -70,6 +74,8 @@ public class projet {
 		}
 		System.out.print(rep);
 	}
+	
+	
 	//FONCTION TEST
 	public static void afficheTab2D(int [][] tab) {
 		String rep = "{";
@@ -83,14 +89,19 @@ public class projet {
 		System.out.println(rep +"}");
 	}
 	//FONCTION TEST
+	
+	
 	public static boolean grilleEstPleine() {
+		//Détecte si la dernière ligne du tableau(donc le haut des colonnes) est plein, si c'est le cas return true sinon false
 		for(int j = 0; j < grille[5].length ; j ++) {
 			if(grille[5][j] == 0) {return false;}
 		}
 		return true;
 	}
 	
+	
 	public static void resetGrille() {
+		//Remets la grille de jeu dans son état d'origine
 		grille = new int[6][7];
 	}
 	
@@ -118,10 +129,12 @@ public class projet {
 	}
 	
 	public static void jeu() {
+		//Lance le jeu
 		resetGrille();
 		boucleDeJeu();
 		afficheGrille();
 	}
+	
 	public static void main(String[] args) {
 		jouer(1, 3);
 		jouer(1, 3);
@@ -136,4 +149,3 @@ public class projet {
 	}
 	
 }
-

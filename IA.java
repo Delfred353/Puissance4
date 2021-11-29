@@ -7,23 +7,19 @@ public class IA {
     private static int P2 = 2;
     private static int to_win = 4;
 
-    public static int detect_win_condition(int [][] tab)
+    public static boolean detect_win_condition(int player)
     {
-        for (int i = 0; i < tab.length; i++)
-            for (int j = 0; j < tab[i].length; j++)
+
+        for (int i = 0; i < Puissance4.grille.length; i++)
+            for (int j = 0; j < Puissance4.grille[i].length; j++)
                 {
-                    if (tab[i][j] == P1) {
-                        if (check_line(tab[i], P1) || check_column(tab, P1) || check_diagonal(tab, j))
-                            return (P1);
-
+                    //check line/diag/column
+                    if (Puissance4.grille[i][j] == player) {
+                        if (check_line(Puissance4.grille[i], P1) || check_column(Puissance4.grille, P1) || check_diagonal(Puissance4.grille, j))
+                            return (true);
                     }
-                    if (tab[i][j] == P2) {
-                        if (check_line(tab[i], P2) || check_column(tab, P2) || check_diagonal(tab, P2))
-                            return (P2);
-                    }
-
                 }
-        return (-1);
+        return (false);
     }
 
     public static boolean check_line(int [] tab, int player)

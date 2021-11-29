@@ -2,12 +2,12 @@
 // Auteurs : Pierre Roumane, Nicolas Merrer
 // Version : 0.1 
 //----------------------------------------------------
-package puissance4;
+package Puissance4;
 
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class projet {
+public class Puissance4 {
 	public static int[][] grille = new int[6][7];
 	
 	public static int entierAleatoire(int a, int b){
@@ -117,7 +117,7 @@ public class projet {
 			int c = sc.nextInt();
 			jouer(jouant, c);
 			
-			if(detect_win_condition(jouant)) {victoire = jouant;}
+			if(IA.detect_win_condition(jouant)) {victoire = jouant;}
 			else if(grilleEstPleine()) {grillePleine = 1;}
 			else {
 				if(jouant == 1) {jouant = 2;}
@@ -127,7 +127,7 @@ public class projet {
 	
 		}
 	}
-	
+
 	public static void jeu() {
 		//Lance le jeu
 		resetGrille();

@@ -7,6 +7,7 @@
 
 SRC =	Puissance4.java \
 		repre.java \
+		Display.java \
 		IA.java
 
 NAME = 	Puissance4

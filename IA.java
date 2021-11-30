@@ -57,10 +57,14 @@ public class IA {
 
     public static boolean check_column(int[][] tab, int i, int j, int player)
     {
+        int cpyi = i;
         //regarde en bas
         if (i <= to_win)
             {
-
+                while (cpyi < to_win && tab[cpyi][j] == player)
+                    cpyi++;
+                if (tab[cpyi][j] == player)
+                    return (true);
             }
         return (false);
     }

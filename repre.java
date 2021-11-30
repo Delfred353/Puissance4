@@ -1,4 +1,4 @@
-package puissance4;
+package Puissance4;
 
 public class repre{
 	//Exercice 1

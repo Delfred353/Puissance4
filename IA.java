@@ -1,7 +1,7 @@
 package Puissance4;
 
 public class IA {
-    private static int to_win = 4;
+    private static int to_win = 3;
 
     public static boolean detect_win_condition(int player)
     {
@@ -20,7 +20,7 @@ public class IA {
 
     public static boolean check_line(int [] tab, int index, int player)
     { 
-        for (int i = index; i <= to_win; i++)
+        for (int i = index; i < to_win; i++)
             if (i >= tab.length || tab[i] != player)
                 return (false);
         return (true);
@@ -30,7 +30,7 @@ public class IA {
     {
         int cpyi = i, cpyj = j;
 
-        if (i >= to_win && j >= to_win)
+        if (i > to_win && j > to_win)
             {
                 //regarde bas a droite
                 while (cpyi < to_win && tab[cpyi][cpyj] == player)
@@ -43,7 +43,7 @@ public class IA {
             }
         cpyi = i;
         cpyj = j;
-        if (i <= to_win && j <= to_win)
+        if (i < to_win && j < to_win)
             {
                 //regarde en bas a gauche
                 while (cpyi < to_win && tab[cpyi][cpyj] == player)
@@ -59,13 +59,12 @@ public class IA {
 
     public static boolean check_column(int[][] tab, int i, int j, int player)
     {
-        int cpyi = i;
         //regarde en bas
-        if (i <= to_win)
+        if (i < to_win)
             {
-                while (cpyi < to_win && tab[cpyi][j] == player)
-                    cpyi++;
-                if (tab[cpyi][j] == player)
+                while (i <= to_win && tab[i][j] == player)
+                    i++;
+                if (tab[i][j] == player)
                     return (true);
             }
         return (false);

@@ -26,13 +26,29 @@ public class IA {
 
     public static boolean check_diagonal(int[][] tab, int i, int j, int player)
     {
-        if (i >= (to_win) && j >= to_win)
+        int cpyi = i, cpyj = j;
+
+        if (i >= to_win && j >= to_win)
             {
                 //regarde bas a droite
+                while (cpyi < to_win && tab[cpyi][cpyj] == player)
+                    {
+                        cpyi++;
+                        cpyj++;
+                    }
+                if (tab[cpyi][cpyj] != player)
+                    return (false);
             }
-        else if (i <= (to_win) && j <= to_win)
+        else if (i <= to_win && j <= to_win)
             {
-                //regarde en bas a gauche   
+                //regarde en bas a gauche
+                while (cpyi < to_win && tab[cpyi][cpyj] == player)
+                {
+                    cpyi--;
+                    cpyj--;
+                }
+                if (tab[cpyi][cpyj] != player)
+                    return (false);   
             }
         return (true);
     }

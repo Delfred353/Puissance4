@@ -9,33 +9,37 @@ public class IA {
                 {
                     //check line/diag/column
                     if (Puissance4.grille[i][j] == player) {
-                        if (check_line(Puissance4.grille[i], player) || check_column(Puissance4.grille, player) || check_diagonal(Puissance4.grille, player))
+                        if (check_line(Puissance4.grille[i], i, player) || check_column(Puissance4.grille, player) || check_diagonal(Puissance4.grille, i, j, player))
                             return (true);
                     }
                 }
         return (false);
     }
 
-    public static boolean check_line(int [] tab, int player)
+    public static boolean check_line(int [] tab, int index, int player)
     { 
-
-        //repenser
-    
-        for (int i = 0; i < to_win; i++)
-            if (i == tab.length || tab[i] != player)
+        for (int i = index; i <= to_win; i++)
+            if (i >= tab.length || tab[i] != player)
                 return (false);
         return (true);
     }
 
-    public static boolean check_diagonal(int[][] tab, int player)
+    public static boolean check_diagonal(int[][] tab, int i, int j, int player)
     {
-        //repenser
-        return (false);
+        if (i >= (to_win) && j >= to_win)
+            {
+                //regarde bas a droite
+            }
+        else if (i <= (to_win) && j <= to_win)
+            {
+                //regarde en bas a gauche   
+            }
+        return (true);
     }
 
     public static boolean check_column(int[][] tab, int player)
     {
-        //pareil
+        //regarde en bas
         return (false);
     }
 }

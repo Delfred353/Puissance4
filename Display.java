@@ -1,6 +1,6 @@
 package puissance4;
 
-public class affichage{
+public class Display{
 	public static int[][] symetrieHorizontale(int[][] tab){
 		//Renverse l'organisation du tableau pour préparé son affichage
 		int n = tab.length;

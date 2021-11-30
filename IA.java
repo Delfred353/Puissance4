@@ -1,15 +1,17 @@
+package Puissance4;
+
 public class IA {
     private static int to_win = 4;
 
     public static boolean detect_win_condition(int player)
     {
 
-        for (int i = 0; i < Puissance4.grille.length; i++)
-            for (int j = 0; j < Puissance4.grille[i].length; j++)
+        for (int i = 0; i < Puissance4.repre.grille.length; i++)
+            for (int j = 0; j < Puissance4.repre.grille[i].length; j++)
                 {
                     //check line/diag/column
-                    if (Puissance4.grille[i][j] == player) {
-                        if (check_line(Puissance4.grille[i], i, player) || check_column(Puissance4.grille, player) || check_diagonal(Puissance4.grille, i, j, player))
+                    if (Puissance4.repre.grille[i][j] == player) {
+                        if (check_line(Puissance4.repre.grille[i], i, player) || check_column(Puissance4.grille, i, j, player) || check_diagonal(Puissance4.grille, i, j, player))
                             return (true);
                     }
                 }
@@ -36,10 +38,10 @@ public class IA {
                         cpyi++;
                         cpyj++;
                     }
-                if (tab[cpyi][cpyj] != player)
-                    return (false);
+                if (tab[cpyi][cpyj] == player)
+                    return (true);
             }
-        else if (i <= to_win && j <= to_win)
+        if (i <= to_win && j <= to_win)
             {
                 //regarde en bas a gauche
                 while (cpyi < to_win && tab[cpyi][cpyj] == player)
@@ -47,15 +49,19 @@ public class IA {
                     cpyi--;
                     cpyj--;
                 }
-                if (tab[cpyi][cpyj] != player)
-                    return (false);   
+                if (tab[cpyi][cpyj] == player)
+                    return (true);
             }
-        return (true);
+        return (false);
     }
 
-    public static boolean check_column(int[][] tab, int player)
+    public static boolean check_column(int[][] tab, int i, int j, int player)
     {
         //regarde en bas
+        if (i <= to_win)
+            {
+
+            }
         return (false);
     }
 }

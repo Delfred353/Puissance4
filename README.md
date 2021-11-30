@@ -8,6 +8,6 @@ This project will be composed of several parts, each implementing a different pa
 
 ## IA
 
-## Interface
+## Display
 
 sus the power 4

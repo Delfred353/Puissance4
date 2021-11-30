@@ -25,7 +25,7 @@ public class IA {
                 return (false);
         return (true);
     }
-
+    // A refaire
     public static boolean check_diagonal(int[][] tab, int i, int j, int player)
     {
         int cpyi = i, cpyj = j;
@@ -56,6 +56,7 @@ public class IA {
             }
         return (false);
     }
+    //A refaire
 
     public static boolean check_column(int[][] tab, int i, int j, int player)
     {

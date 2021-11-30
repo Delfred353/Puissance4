@@ -41,6 +41,8 @@ public class IA {
                 if (tab[cpyi][cpyj] == player)
                     return (true);
             }
+        cpyi = i;
+        cpyj = j;
         if (i <= to_win && j <= to_win)
             {
                 //regarde en bas a gauche

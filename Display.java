@@ -1,4 +1,4 @@
-package puissance4;
+package Puissance4;
 
 public class Display{
 	public static int[][] symetrieHorizontale(int[][] tab){

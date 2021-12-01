@@ -6,6 +6,8 @@ This project will be composed of several parts, each implementing a different pa
 
 ## Game
 
+To launch the game, download the folder Puissance4 and then, execute the game from the file named puissance4.java .
+
 ## IA
 
 ## Display

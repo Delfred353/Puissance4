@@ -2,13 +2,15 @@
 ## ISTIC PROJECT, 2021
 ## Makefile
 ## File description:
-## Makefile for Scrabble Project
+## Makefile for Puissance4 Project
 ##
 
-SRC =	Puissance4.java \
-		repre.java \
+SRC =	LauchPuissance4.java \
+		puissance4.java \
 		Display.java \
-		IA.java
+		IA.java \
+		repre.java \
+		verifWin.java 
 
 NAME = 	Puissance4
 

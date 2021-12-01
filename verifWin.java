@@ -75,4 +75,14 @@ public class verifWin{
 	            }
 	        return (false);
 	    }
+	    
+	   //NE PAS TOUCHER 
+	    public static boolean grilleEstPleine() {
+			//Détecte si la dernière ligne du tableau(donc le haut des colonnes) est plein, si c'est le cas return true sinon false
+			for(int j = 0; j < repre.grille[5].length ; j ++) {
+				if(repre.grille[5][j] == 0) {return false;}
+			}
+			return true;
+		}
+	    //NE PAS TOUCHER
 }

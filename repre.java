@@ -11,7 +11,7 @@ public class repre{
 	
 	//Exercice 2
 	public static void jouer(int joueur, int colonne) {//1<=joueur<=2
-		//Place un jeton dans la colonne indiquÃ© dans un emplacement libre, en partant du haut de la colonne
+		//Place un jeton dans la colonne indiqué dans un emplacement libre, en partant du haut de la colonne
 		for(int i = 0; i < grille.length; i ++) {
 			if(grille[i][colonne] == 0) {
 				grille[i][colonne] = joueur;

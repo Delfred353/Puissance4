@@ -10,7 +10,8 @@ SRC =	LauchPuissance4.java \
 		Display.java \
 		IA.java \
 		repre.java \
-		verifWin.java 
+		verifWin.java \
+		LauchPuissance4.java
 
 NAME = 	Puissance4
 

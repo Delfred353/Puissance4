@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 ///----------------------------------------------------
 //Auteurs : Pierre Roumane, Nicolas Merrer
-//Version : 0.6
+//File Version : 0.4
 //-----------------------------------------------------
 
 class LaunchPuissance4{
@@ -15,7 +15,7 @@ class LaunchPuissance4{
 		int victoire = 0;
 		int grillePleine = 0;
 		int jouant = 1;
-		Scanner sc = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);//Ouvre une lecture de l'entrée standard pour les coups des joueurs.
 		while(victoire == 0 || grillePleine != 0) {
 			Display.afficheGrille();
 			System.out.println("Quel coup pour le joueur " + jouant);
@@ -28,11 +28,21 @@ class LaunchPuissance4{
 				if(jouant == 1) {jouant = 2;}
 				else {jouant = 1;}
 			}
-			
-	
+
 		}
 		sc.close();
+		if(victoire == 1) {System.out.println("Victoire du joueur 1");}
+		else if(victoire == 2) {System.out.println("Victoire du joueur 2");}
+		else if(grillePleine == 1) {System.out.println("Egalité des deux joueurs ( la grille est pleine)");}
 	}
+
+	public static void jeu() {
+		//Lance le jeu
+		repre.initialiseGrille();
+		boucleDeJeu();
+		Display.afficheGrille();
+	}
+}
 
 	public static void jeu() {
 		//Lance le jeu

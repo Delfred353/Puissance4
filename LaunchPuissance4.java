@@ -1,4 +1,3 @@
-package Puissance4;
 
 import java.util.Scanner;
 
@@ -23,7 +22,7 @@ public class LaunchPuissance4{
 			int c = sc.nextInt();
 			repre.jouer(jouant, c, repre.grille);
 			
-			if(verifWin.detect_win_condition(jouant)) {victoire = jouant;}
+			if(verifWin.win(jouant)) {victoire = jouant;}
 			else if(verifWin.grilleEstPleine()) {grillePleine = 1;}
 			else {
 				if(jouant == 1) {jouant = 2;}

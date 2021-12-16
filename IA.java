@@ -4,6 +4,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class IA{
 	
+	static int[][] CopieGrille = new int [6][7];
 	static int joueur;
 	
 	public IA(int j) {
@@ -30,7 +31,31 @@ public class IA{
 				joue = true;
 			}
 		}
-		repre.jouer(joueur,  c);
+		repre.jouer(joueur,  c, repre.grille);
+	}
+	
+	public static void copieGrille(){
+		
+		for(int i = 0; i < CopieGrille.length; i++) {
+			for(int j = 0; j < CopieGrille[0].length; j ++) {
+				CopieGrille[i][j] = repre.grille[i][j];
+			}
+		}
+
+	}
+	
+	public static void reinitialiserCopieGrille(){
+		copieGrille();
+	}
+	
+	public static boolean peutGagner1Coup() {
+		copieGrille();
+		for(int i = 0; i < CopieGrille.length; i++) {
+			for(int j = 0; j < CopieGrille[0].length; j ++) {
+				
+			}
+		}
+		
 	}
 
 }

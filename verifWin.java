@@ -1,9 +1,7 @@
-package Puissance4;
 
 public class verifWin{
-	private static int to_win = 3;
 	
-	  public static boolean detect_win_condition(int player)
+	  public static boolean win(int player)
 	    {
 
 	        for (int i = 0; i < repre.grille.length; i++)
@@ -11,69 +9,28 @@ public class verifWin{
 	                {
 	                    //check line/diag/column
 	                    if (repre.grille[i][j] == player) {
-	                        if (check_line(repre.grille[i], i, player) || check_column(repre.grille, i, j, player) || check_diagonal(repre.grille, i, j, player))
+	                        if (checkLine( i, player) || checkColumn(j, player) || checkDiag(j, player))
 	                            return (true);
 	                    }
 	                }
 	        return (false);
 	    }
-	  
-	  
-	  
-	  
+
 	  
 
-	    public static boolean check_line(int [] tab, int index, int player)
-	    { 
-	        for (int i = index; i < to_win; i++)
-	            if (i >= tab.length || tab[i] != player)
-	                return (false);
-	        return (true);
-	    }
-	    // A refaire
-	    public static boolean check_diagonal(int[][] tab, int i, int j, int player)
-	    {
-	        int cpyi = i, cpyj = j;
+	   
 
-	        if (i > to_win && j > to_win)
-	            {
-	                //regarde bas a droite
-	                while (cpyi < to_win && tab[cpyi][cpyj] == player)
-	                    {
-	                        cpyi++;
-	                        cpyj++;
-	                    }
-	                if (tab[cpyi][cpyj] == player)
-	                    return (true);
-	            }
-	        cpyi = i;
-	        cpyj = j;
-	        if (i < to_win && j < to_win)
-	            {
-	                //regarde en bas a gauche
-	                while (cpyi < to_win && tab[cpyi][cpyj] == player)
-	                {
-	                    cpyi--;
-	                    cpyj--;
-	                }
-	                if (tab[cpyi][cpyj] == player)
-	                    return (true);
-	            }
-	        return (false);
-	    }
-	    //A refaire
-
-	    public static boolean check_column(int[][] tab, int i, int j, int player)
-	    {
-	        //regarde en bas
-	        if (i < to_win)
-	            {
-	                while (i <= to_win && tab[i][j] == player)
-	                    i++;
-	                if (tab[i][j] == player)
-	                    return (true);
-	            }
-	        return (false);
+	    public static boolean checkColumn(int j, int jouant) {
+	    	int k = 0;
+	    	for(int i = 0; i < repre.grille.length; i++) {
+	    		if(repre.grille[i][j] == jouant) {
+	    			k+=1; 
+	    			if(k==4) {return true;}
+	    		}
+	    		else {k=0;}
+	    		
+	    	}
+	    	return false;
 	    }
 	    
 	   //NE PAS TOUCHER 
@@ -85,4 +42,79 @@ public class verifWin{
 			return true;
 		}
 	    //NE PAS TOUCHER
+	    
+	    public static boolean checkLine(int i, int jouant) {
+	    	int k = 0;
+	    	for(int j = 0; j < repre.grille[i].length; j ++) {
+	    		if(repre.grille[i][j] == jouant) {k+=1;}
+	    		else {k = 0;}
+	    	}
+	    	if(k == 4) {return true;}
+	    	return false;
+	    }
+	    
+	    public static boolean checkDiag(int i, int jouant) {
+	    	int j = i;
+	    	int k = 0;
+	    	if(j < repre.grille[0].length) {
+		    	for(int x = 0; x < repre.grille.length; x++) {
+		    		if(repre.grille[x][j] == jouant) {k +=1;
+		    		
+		    		if(k == 4) {return true;}}
+		    		else {k=0;
+		    			
+		    		}
+		    		if(j+1 < repre.grille[x].length) {j+=1;}
+		    		
+		    	}
+		    	j = i;
+		    
+	    	}
+	    	
+	    	
+	    	
+	    	if(i-1 != 0) {
+	    	
+	    		for(int x = 0; x < repre.grille.length; x++) {
+		    		if(repre.grille[x][j] == jouant) {k +=1;if(k ==4) {return true;}}
+		    		else {k=0;}
+		    		if(j-1 >= 0) {j-=1;}
+		    		else {return false;}
+		    	}
+		    	
+	    	}
+	    	
+	    	return false;
+	  
+	    }
+	    
+	    
+	    public static void main(String[] args) {
+	    	System.out.println(checkLine(1, 1));
+	    	repre.jouer(1, 3, repre.grille);
+	    	repre.jouer(1, 3, repre.grille);
+	    	repre.jouer(1, 3, repre.grille);
+	    	repre.jouer(1, 3, repre.grille);
+	    	repre.jouer(1, 4, repre.grille);
+	    	repre.jouer(1, 4, repre.grille);
+	    	repre.jouer(1, 4, repre.grille);
+	    	repre.jouer(1, 4, repre.grille);
+	    	repre.jouer(1, 5, repre.grille);
+	    	repre.jouer(1, 5, repre.grille);
+	    	repre.jouer(1, 5, repre.grille);
+	    	repre.jouer(1, 5, repre.grille);
+	    	repre.jouer(1, 6, repre.grille);
+	    	
+	    
+	    	System.out.println(checkLine(0, 1));
+	    	Display.afficheGrille();
+	    	System.out.println(checkDiag(6, 1));
+	    	System.out.println(win(1));
+	    }
+	    
+	    
+	    
+	    
+	    
+	    
 }

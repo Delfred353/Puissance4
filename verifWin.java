@@ -65,31 +65,24 @@ public class verifWin{
 		    			
 		    		}
 		    		if(j+1 < repre.grille[x].length) {j+=1;}
-		    		
 		    	}
 		    	j = i;
-		    
 	    	}
-	    	
-	    	
-	    	
+		    
 	    	if(i-1 != 0) {
-	    	
 	    		for(int x = 0; x < repre.grille.length; x++) {
 		    		if(repre.grille[x][j] == jouant) {k +=1;if(k ==4) {return true;}}
 		    		else {k=0;}
 		    		if(j-1 >= 0) {j-=1;}
 		    		else {return false;}
 		    	}
-		    	
 	    	}
-	    	
-	    	return false;
-	  
+	    	return false;  
 	    }
 	    
 	    
 	    public static void main(String[] args) {
+		    //Faire des tests clairs
 	    	System.out.println(checkLine(1, 1));
 	    	repre.jouer(1, 3, repre.grille);
 	    	repre.jouer(1, 3, repre.grille);

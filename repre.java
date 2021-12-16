@@ -10,11 +10,11 @@ public class repre{
 	//Exercice 1
 	
 	//Exercice 2
-	public static void jouer(int joueur, int colonne) {//1<=joueur<=2
-		//Place un jeton dans la colonne indiqué dans un emplacement libre, en partant du haut de la colonne
-		for(int i = 0; i < grille.length; i ++) {
-			if(grille[i][colonne] == 0) {
-				grille[i][colonne] = joueur;
+	public static void jouer(int joueur, int colonne, int [][] tab) {//1<=joueur<=2
+		//Place un jeton dans la colonne indiquÃ© dans un emplacement libre, en partant du haut de la colonne
+		for(int i = 0; i < tab.length; i ++) {
+			if(tab[i][colonne] == 0) {
+				tab[i][colonne] = joueur;
 				return;
 			}
 		}
@@ -35,14 +35,16 @@ public class repre{
 		System.out.println(rep +"}");
 	}
 	
+	
+	
 	public static void main(String[] args) {
-		jouer(1, 3);
-		jouer(1, 3);
-		jouer(1, 3);
-		jouer(1, 3);
-		jouer(1, 3);
-		jouer(1, 3);
-		jouer(2,4);
+		jouer(1, 3, grille);
+		jouer(1, 3, grille);
+		jouer(1, 3, grille);
+		jouer(1, 3, grille);
+		jouer(1, 3, grille);
+		jouer(1, 3, grille);
+		jouer(2, 4, grille);
 		afficheTab2D(grille);
 	}
 	//tests

@@ -51,9 +51,15 @@ public class IA{
 		copieGrille();
 		for(int i = 0; i < CopieGrille.length; i++) 
 		{
-			for(int j = 0; j < CopieGrille[0].length; j ++) 
+			for(int j = 0; j < CopieGrille[i].length; j++) 
 			{
-				
+				if (CopieGrille[i][j] == 0) { 
+					CopieGrille[i][j] = joueur;
+					if (win(CopieGrille, joueur)
+						repre.grille[i][j] = joueur;
+					else
+						CopieGrille[i][j] = 0;
+				}
 			}
 		}
 		

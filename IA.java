@@ -47,21 +47,17 @@ public class IA{
 		copieGrille();
 	}
 	
-	public static boolean peutGagner1Coup() {
+	public static void peutGagner1Coup() {
 		copieGrille();
-		for(int i = 0; i < CopieGrille.length; i++) 
-		{
-			for(int j = 0; j < CopieGrille[i].length; j++) 
-			{
-				if (CopieGrille[i][j] == 0) { 
-					CopieGrille[i][j] = joueur;
-					if (verifWin.win(joueur, CopieGrille) == true)
-						repre.grille[i][j] = joueur;
-					else
-						CopieGrille[i][j] = 0;
-				}
+	
+		for(int j = 0; j < CopieGrille[i].length; j++) {
+			jouer(joueur, j, CopieGrille);
+			if (verifWin.win(joueur, CopieGrille) { 
+				jouer(joueur, j, repre.grille);
+				return;
 			}
 		}
+		joueCoupRandom();
 		
 	}
 

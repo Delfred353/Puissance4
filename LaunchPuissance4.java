@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 
@@ -22,7 +21,7 @@ public class LaunchPuissance4{
 			int c = sc.nextInt();
 			repre.jouer(jouant, c, repre.grille);
 			
-			if(verifWin.win(jouant)) {victoire = jouant;}
+			if(verifWin.win(jouant, repre.grille)) {victoire = jouant;}
 			else if(verifWin.grilleEstPleine()) {grillePleine = 1;}
 			else {
 				if(jouant == 1) {jouant = 2;}

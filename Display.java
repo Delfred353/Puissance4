@@ -54,17 +54,18 @@ public class Display{
 	public static void main(String[] args) {
 		repre.initialiseGrille();
 		repre.jouer(1, 6, repre.grille);
-		repre.jouer(2,  4, repre.grille);
+		repre.jouer(2, 4, repre.grille);
 		repre.jouer(2, 6, repre.grille);
-		repre.jouer(1,  4, repre.grille);
+		repre.jouer(1, 4, repre.grille);
 		afficheGrille();
 		int[][] tab = new int[6][7];
-		for(int i = 0; i < tab.length; i ++) {
-			for(int j = 0; j < tab[i].length; j ++) {
+		for(int i = 0; i < tab.length; i ++) 
+		{
+			for(int j = 0; j < tab[i].length; j ++) 
+			{
 				tab[i][j] = i;
 			}
-		}
-		
+		}		
 		repre.afficheTab2D(tab);
 		repre.afficheTab2D(symetrieHorizontale(tab));
 	}

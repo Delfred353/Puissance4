@@ -35,7 +35,6 @@ public class IA{
 	}
 	
 	public static void copieGrille(){
-		
 		for(int i = 0; i < CopieGrille.length; i++) {
 			for(int j = 0; j < CopieGrille[0].length; j ++) {
 				CopieGrille[i][j] = repre.grille[i][j];
@@ -50,8 +49,10 @@ public class IA{
 	
 	public static boolean peutGagner1Coup() {
 		copieGrille();
-		for(int i = 0; i < CopieGrille.length; i++) {
-			for(int j = 0; j < CopieGrille[0].length; j ++) {
+		for(int i = 0; i < CopieGrille.length; i++) 
+		{
+			for(int j = 0; j < CopieGrille[0].length; j ++) 
+			{
 				
 			}
 		}

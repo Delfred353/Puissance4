@@ -55,7 +55,7 @@ public class IA{
 			{
 				if (CopieGrille[i][j] == 0) { 
 					CopieGrille[i][j] = joueur;
-					if (win(CopieGrille, joueur)
+					if (verifWin.win(joueur, CopieGrille) == true)
 						repre.grille[i][j] = joueur;
 					else
 						CopieGrille[i][j] = 0;

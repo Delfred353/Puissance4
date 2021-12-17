@@ -1,4 +1,3 @@
-package Puissance4;
 
 import java.util.concurrent.ThreadLocalRandom;
 

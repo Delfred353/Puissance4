@@ -14,4 +14,4 @@ To launch the game, download the folder Puissance4 and then, execute the game fr
 
 sus the power 4
 
-##This project is finiched, but some modifications will occure over time
+##This project is finished, but some modifications will occure over time

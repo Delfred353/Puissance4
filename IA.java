@@ -1,5 +1,4 @@
 package Puissance4;
-
 import java.util.concurrent.ThreadLocalRandom;
 
 public class IA{
@@ -7,8 +6,8 @@ public class IA{
 	static int[][] CopieGrille = new int [6][7];
 	static int joueur;
 	
-	public IA(int j) {
-		joueur = j;
+	public IA() {
+		joueur = 2;
 	}
 	
 	
@@ -18,7 +17,7 @@ public class IA{
 	}
 	
 	public static boolean colonneEstLibre(int c) {
-		if(repre.grille[6][c] == 0) {return true;}
+		if(repre.grille[5][c] == 0) {return true;}
 		return false;
 	}
 	
@@ -31,7 +30,7 @@ public class IA{
 				joue = true;
 			}
 		}
-		repre.jouer(joueur,  c, repre.grille);
+		repre.jouer(2,  c, repre.grille);
 	}
 	
 	public static void copieGrille(){
@@ -50,10 +49,10 @@ public class IA{
 	public static void peutGagner1Coup() {
 		copieGrille();
 	
-		for(int j = 0; j < CopieGrille[i].length; j++) {
-			jouer(joueur, j, CopieGrille);
-			if (verifWin.win(joueur, CopieGrille) { 
-				jouer(joueur, j, repre.grille);
+		for(int j = 0; j < CopieGrille[0].length; j++) {
+			repre.jouer(2, j, CopieGrille);
+			if (verifWin.win(2, CopieGrille)) { 
+				repre.jouer(2, j, repre.grille);
 				return;
 			}
 		}

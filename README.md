@@ -13,3 +13,5 @@ To launch the game, download the folder Puissance4 and then, execute the game fr
 ## Display
 
 sus the power 4
+
+##This project is finiched, but some modifications will occure over time

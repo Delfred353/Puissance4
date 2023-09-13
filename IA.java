@@ -17,11 +17,13 @@ public class IA{
 	}
 	
 	public static boolean colonneEstLibre(int c) {
+		//retourne un booléen indiquant si la colonne (c) est libre ou pas
 		if(repre.grille[5][c] == 0) {return true;}
 		return false;
 	}
 	
 	public static void joueCoupRandom() {
+		//joue un coup possible aléatoirement dans la grille
 		boolean joue = false;
 		int c = 0;
 		while (joue != true){
@@ -34,6 +36,7 @@ public class IA{
 	}
 	
 	public static void copieGrille(){
+		//Effectue une copie de la Grille de jeu
 		for(int i = 0; i < CopieGrille.length; i++) {
 			for(int j = 0; j < CopieGrille[0].length; j ++) {
 				CopieGrille[i][j] = repre.grille[i][j];
@@ -47,6 +50,7 @@ public class IA{
 	}
 	
 	public static void peutGagner1Coup() {
+		//joue le coup si il peu tgagner en 1 coup, joue aléatoirement sinon
 		copieGrille();
 	
 		for(int j = 0; j < CopieGrille[0].length; j++) {
@@ -59,5 +63,5 @@ public class IA{
 		joueCoupRandom();
 		
 	}
-
+//Une amélioration possible est un stack de peutGagner1coup(modifié) effectué sur chaque colonne puis pour chaque action, réeffectuer peutGagner1coup afin d'obtenir une possibilité de gagner en 2 coup et ainsi de suite.
 }
